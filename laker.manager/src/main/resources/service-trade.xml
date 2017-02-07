@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       	   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 添加商品到购物车 -->
+    <!--<bean id="addCartParamCheckComponent" class="com.tqmall.combo.component.cart.AddCartParamCheckComponent">-->
+        <!--<property name="businessChecks">-->
+            <!--<set>-->
+                <!--<ref bean="userCheck" />-->
+                <!--<ref bean="addCartParamCheck" />-->
+                <!--<ref bean="activityCheck" />-->
+                <!--<ref bean="goodsCheck" />-->
+                <!--<ref bean="skuStockLimitCheck" />-->
+                <!--<ref bean="priceCheck" />-->
+                <!--<ref bean="stockCheck" />-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="cartAddGoodsProcessor" class="com.tqmall.combo.processor.cart.CartAddGoodsProcessor">-->
+        <!--<property name="components">-->
+            <!--<set>-->
+                <!--<ref bean="addCartParamComponent"/>-->
+                <!--<ref bean="addCartParamCheckComponent"/>-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id="cartModifyGoodsProcessor" class="com.tqmall.combo.processor.cart.CartModifyGoodsProcessor">-->
+        <!--<property name="components">-->
+            <!--<set>-->
+                <!--<ref bean="addCartParamComponent"/>-->
+                <!--<ref bean="addCartParamCheckComponent"/>-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 添加KA商品到购物车 &ndash;&gt;-->
+    <!--<bean id="addKaCartParamCheckComponent" class="com.tqmall.combo.component.cart.AddCartParamCheckComponent">-->
+        <!--<property name="businessChecks">-->
+            <!--<set>-->
+                <!--<ref bean="userCheck" />-->
+                <!--<ref bean="addCartParamCheck" />-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="kaCartAddGoodsProcessor" class="com.tqmall.combo.processor.cart.CartAddGoodsProcessor">-->
+        <!--<property name="components">-->
+            <!--<set>-->
+                <!--<ref bean="addCartParamComponent"/>-->
+                <!--<ref bean="addKaCartParamCheckComponent"/>-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="kaCartModifyGoodsProcessor" class="com.tqmall.combo.processor.cart.CartModifyGoodsProcessor">-->
+        <!--<property name="components">-->
+            <!--<set>-->
+                <!--<ref bean="addCartParamComponent"/>-->
+                <!--<ref bean="addKaCartParamCheckComponent"/>-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+    <!--<bean id="cartRemoveGoodsProcessor" class="com.tqmall.combo.processor.cart.CartRemoveGoodsProcessor">-->
+        <!--<property name="components">-->
+            <!--<set>-->
+                <!--<ref bean="addCartParamComponent"/>-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+    <!--&lt;!&ndash; 列出用户的购物车 &ndash;&gt;-->
+    <!--<bean id="listCartProcessor" class="com.tqmall.combo.processor.cart.ListCartProcessor">-->
+        <!--<property name="components">-->
+            <!--<set>-->
+                <!--<ref bean="listCartParamComponent"/>-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id="listKACartProcessor" class="com.tqmall.combo.processor.cart.ListKACartProcessor">-->
+        <!--<property name="components">-->
+            <!--<set>-->
+                <!--<ref bean="listCartParamComponent"/>-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+
+    <!--<bean id="orderFeeProcessor" class="com.tqmall.combo.processor.order.OrderFeeProcessor">-->
+        <!--<property name="businessChecks">-->
+            <!--<set>-->
+                <!--<ref bean="goodsValidityCheck"/>-->
+                <!--<ref bean="actValidityCheck"/>-->
+                <!--<ref bean="createOrderLimitCheck"/>-->
+                <!--<ref bean="pointMallCheck"/>-->
+                <!--<ref bean="createOrderUserCheck"/>-->
+                <!--<ref bean="orderAmountCheck"/>-->
+            <!--</set>-->
+        <!--</property>-->
+        <!--<property name="components">-->
+            <!--<set>-->
+                <!--<ref bean="userInfoComponent"/>-->
+                <!--<ref bean="goodsRequestComponent"/>-->
+                <!--<ref bean="activityInfoComponent"/>-->
+                <!--<ref bean="goodsInfoComponent"/>-->
+                <!--<ref bean="orderAmountComponent"/>-->
+                <!--&lt;!&ndash;<ref bean="shippingFeeComponent"/>&ndash;&gt;-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id="createOrderProcessor" class="com.tqmall.combo.processor.order.CreateOrderProcessor">-->
+        <!--<property name="businessChecks">-->
+            <!--<set>-->
+                <!--<ref bean="goodsValidityCheck"/>-->
+                <!--<ref bean="actValidityCheck"/>-->
+                <!--<ref bean="createOrderLimitCheck"/>-->
+                <!--<ref bean="pointMallCheck"/>-->
+                <!--<ref bean="createOrderUserCheck"/>-->
+                <!--<ref bean="orderAmountCheck"/>-->
+            <!--</set>-->
+        <!--</property>-->
+        <!--<property name="components">-->
+            <!--<set>-->
+                <!--<ref bean="userInfoComponent"/>-->
+                <!--<ref bean="goodsRequestComponent"/>-->
+                <!--<ref bean="activityInfoComponent"/>-->
+                <!--<ref bean="goodsInfoComponent"/>-->
+                <!--<ref bean="orderAmountComponent"/>-->
+                <!--&lt;!&ndash;<ref bean="shippingFeeComponent"/>&ndash;&gt;-->
+            <!--</set>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+</beans>

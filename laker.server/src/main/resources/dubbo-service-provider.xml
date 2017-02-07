@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://code.alibabatech.com/schema/dubbo
+           http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+    <!-- 依赖biz层 -->
+    <import resource="classpath*:biz-context.xml"/>
+
+    <!--拦截dubbo服务-->
+    <bean id="dubboServiceInterceptor" class="com.hao.laker.server.DubboServiceInterceptor"/>
+
+    <aop:config proxy-target-class="false">
+        <aop:pointcut id="dubboServicePointcut" expression="execution(* com.hao.laker.service..*.*(..))"/>
+        <aop:advisor advice-ref="dubboServiceInterceptor" pointcut-ref="dubboServicePointcut"/>
+    </aop:config>
+    <!-- 默认服务超时时间 -->
+    <dubbo:provider timeout="60000"/>
+
+    <!-- 声明需要暴露的服务接口-->
+    <!--<dubbo:service interface="com.tqmall.magic.service.proxy.RpcProxyService" ref="rpcProxyService"
+                   version="${dubbo.magic.version}" owner="bao.ding"/>
+
+    <dubbo:service interface="com.tqmall.magic.service.channel.RpcChannelService" ref="rpcChannelService"
+                   version="${dubbo.magic.version}" owner="chaoxiang.ma"/>
+    <dubbo:service interface="com.tqmall.magic.service.partner.RpcShopPartnerService" ref="rpcShopPartnerService"
+                   version="${dubbo.magic.version}" owner="chaoxiang.ma"/>-->
+</beans>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration debug="false">
+    <property name="COMMON_PATTERN"
+              value="[%d{'MM-dd HH:mm:ss,SSS',GMT+8:00}] %-5p [%.10t][%X{CU}] %logger{36}[%L] - %m%n" />
+    <property name="LOG_CHARSET" value="UTF-8" />
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${COMMON_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <appender name="COMMON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/common.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>common.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>`
+            <charset>UTF-8</charset>
+            <pattern>${COMMON_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ERROR" class="ch.qos.logback.core.FileAppender">
+        <file>logs/error.log</file>
+        <append>false</append>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">å
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${COMMON_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="com.hao.laker">
+        <level value="DEBUG"/>
+    </logger>
+    <logger name="org.springframework">
+        <level value="DEBUG"/>
+    </logger>
+    <logger name="org.mybatis">
+        <level value="DEBUG"/>
+    </logger>
+    <!--<logger name="org.apache.ibatis" level="DEBUG">-->
+    <!--<appender-ref ref="CONSOLE"/>-->
+    <!--</logger>-->
+
+    <logger name="java.sql.Connection" level="DEBUG" />
+    <logger name="java.sql.Statement" level="DEBUG" />
+    <logger name="java.sql.PreparedStatement" level="DEBUG" />
+
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="COMMON"/>
+        <appender-ref ref="ERROR"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
