@@ -6,7 +6,7 @@ import com.hao.laker.dao.test.TestMapper;
 import com.hao.laker.entity.test.Test1;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +17,7 @@ import java.util.concurrent.*;
  * Created by haojiahong on 16/7/26.
  */
 @Slf4j
-@Service
+@Component
 public class TestServiceImpl implements TestService {
     private static final Integer FIXED_THREAD = Runtime.getRuntime().availableProcessors();
 
@@ -70,6 +70,7 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
+    @Transactional
     public int insertTest(Test1 test1) {
         addTest(test1);
         return 0;

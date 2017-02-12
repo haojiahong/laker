@@ -3,14 +3,13 @@ package com.hao.laker.biz;
 import com.google.common.collect.Lists;
 import com.hao.laker.biz.test.TestService;
 import com.hao.laker.entity.test.Test1;
+import com.hao.laker.study.thread.MainProcessor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,6 +20,8 @@ import java.util.List;
 public class TestServiceTest {
     @Autowired
     private TestService testService;
+    @Autowired
+    private MainProcessor mainProcessor;
 
     @Test
 //    @Rollback(false)
@@ -46,6 +47,11 @@ public class TestServiceTest {
         test1.setTestName("test11111");
         int result = testService.insertTest(test1);
         System.out.println(result);
+    }
+
+    @Test
+    public void threadTest() {
+        mainProcessor.testSpringTransactionThread();
     }
 
 }
