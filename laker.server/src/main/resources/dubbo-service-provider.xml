@@ -17,7 +17,7 @@
     <bean id="dubboServiceInterceptor" class="com.hao.laker.server.DubboServiceInterceptor"/>
 
     <aop:config proxy-target-class="false">
-        <aop:pointcut id="dubboServicePointcut" expression="execution(* com.hao.laker.service..*.*(..))"/>
+        <aop:pointcut id="dubboServicePointcut" expression="execution(* com.hao.laker.server..*.*(..))"/>
         <aop:advisor advice-ref="dubboServiceInterceptor" pointcut-ref="dubboServicePointcut"/>
     </aop:config>
     <!-- 默认服务超时时间 -->

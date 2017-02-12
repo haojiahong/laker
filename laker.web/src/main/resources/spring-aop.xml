@@ -11,7 +11,7 @@
     <bean id="controllerResultInterceptor" class="com.hao.laker.web.ControllerResultInterceptor"/>
     <aop:config proxy-target-class="false">
         <aop:pointcut id="resultControlWrapper"
-            expression="(@annotation(org.springframework.web.bind.annotation.ResponseBody) and execution(com.tqmall.core.common.entity.Result *.*(..))) or (@annotation(org.springframework.web.bind.annotation.ResponseBody) and execution(com.tqmall.core.common.entity.PagingResult *.*(..)))"/>
+            expression="(@annotation(org.springframework.web.bind.annotation.ResponseBody) and execution(com.hao.laker.common.entity.Result *.*(..))) or (@annotation(org.springframework.web.bind.annotation.ResponseBody) and execution(com.hao.laker.common.entity.PagingResult *.*(..)))"/>
         <aop:advisor advice-ref="controllerResultInterceptor" pointcut-ref="resultControlWrapper"/>
     </aop:config>
 

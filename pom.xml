@@ -168,34 +168,24 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.tqmall.combo</groupId>
-                <artifactId>combo-web</artifactId>
+                <groupId>com.hao.laker</groupId>
+                <artifactId>laker-web</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.tqmall.combo</groupId>
-                <artifactId>combo-server</artifactId>
+                <groupId>com.hao.laker</groupId>
+                <artifactId>laker-server</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.tqmall.combo</groupId>
-                <artifactId>combo-dal</artifactId>
+                <groupId>com.hao.laker</groupId>
+                <artifactId>laker-dal</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.tqmall.combo</groupId>
-                <artifactId>combo-manager</artifactId>
+                <groupId>com.hao.laker</groupId>
+                <artifactId>laker-manager</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.tqmall.zenith</groupId>
-                <artifactId>errorcode</artifactId>
-                <version>1.0.2</version>
-            </dependency>
-            <dependency>
-                <groupId>com.tqmall.core</groupId>
-                <artifactId>tqmall-core-common</artifactId>
-                <version>1.0.2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.objenesis</groupId>
@@ -622,11 +612,6 @@
                 <groupId>net.bull.javamelody</groupId>
                 <artifactId>javamelody-core</artifactId>
                 <version>1.57.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.tqmall.zenith</groupId>
-                <artifactId>brilliant.api</artifactId>
-                <version>1.0.1</version>
             </dependency>
 
             <dependency>

@@ -2,10 +2,10 @@ package com.hao.laker.web;
 
 
 import com.alibaba.fastjson.JSONArray;
-import com.tqmall.core.common.entity.PagingResult;
-import com.tqmall.core.common.entity.Result;
-import com.tqmall.core.common.exception.BusinessCheckFailException;
-import com.tqmall.core.common.exception.BusinessProcessFailException;
+import com.hao.laker.common.entity.PagingResult;
+import com.hao.laker.common.entity.Result;
+import com.hao.laker.common.exception.BusinessCheckFailException;
+import com.hao.laker.common.exception.BusinessProcessFailException;
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
