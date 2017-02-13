@@ -1,0 +1,15 @@
+##dubbo.application.name=laker
+##zookeeper.address=${zookeeper_address}
+##dubbo.port=${dubbo_port}
+##dubbo.service.version=${dubbo_service_version}
+##dubbo.consumer.version=${dubbo_consumer_version}
+
+##redis.host =${redis_host}
+##redis.port = ${redis_port}
+##redis.auth =${redis_auth}
+
+##job.host = ${job_host}
+
+##tolerance.alert = ${tolerance_alert}
+
+##iserver.domain = ${iserver_domain}

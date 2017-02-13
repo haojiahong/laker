@@ -12,21 +12,21 @@
 		   
     <!-- order越小越先加载，此项目最小从10开始，方便后面插队，此处是20 -->
     <context:property-placeholder order="20" ignore-unresolvable="true"
-                                  location="classpath:magic-biz.properties"/>
+                                  location="classpath:laker-manager.properties"/>
     <context:component-scan base-package="com.hao.laker"/>
 
     <!-- dubbo 配置 -->
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="${dubbo.application.name}" organization="iserver" owner="hao"/>
+    <!--<dubbo:application name="${dubbo.application.name}" organization="iserver" owner="hao"/>-->
 
     <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <dubbo:registry protocol="zookeeper" address="${zookeeper.address}" />
+    <!--<dubbo:registry protocol="zookeeper" address="${zookeeper.address}" />-->
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="${dubbo.port}"/>
+    <!--<dubbo:protocol name="dubbo" port="${dubbo.port}"/>-->
 
-    <dubbo:consumer check="false"/>
+    <!--<dubbo:consumer check="false"/>-->
     <!--从注册中心发现监控中心地址-->
-    <dubbo:monitor protocol="registry" />
+    <!--<dubbo:monitor protocol="registry" />-->
 
     <import resource="manager-aop.xml"/>
 

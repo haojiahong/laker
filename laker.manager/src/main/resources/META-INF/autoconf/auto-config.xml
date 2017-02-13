@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config description="">
+    <group name="laker-manager">
+
+        <!--<property name="zookeeper.address"-->
+                  <!--defaultValue="115.29.220.170:2181"-->
+                  <!--description="zookeeper注册中心地址"/>-->
+        <!--<property name="dubbo.port"-->
+                  <!--defaultValue="20880"-->
+                  <!--description="dubbo暴露服务端口"/>-->
+        <!--<property name="dubbo.service.version"-->
+                  <!--defaultValue="1.0.0"-->
+                  <!--description="dubbo服务接口默认版本"/>-->
+        <!--<property name="dubbo.consumer.version"-->
+                  <!--defaultValue="1.0.0"-->
+                  <!--description="dubbo服务调用者接口默认版本"/>-->
+
+        <!--<property name="redis.host"-->
+                  <!--defaultValue="121.199.28.244"-->
+                  <!--description="redis端口"/>-->
+        <!--<property name="redis.port"-->
+                  <!--defaultValue="6379"-->
+                  <!--description="redis port"/>-->
+        <!--<property name="redis.auth"-->
+                  <!--defaultValue="xZ7ScgiMV1Acv3h4"-->
+                  <!--description="redis auth密码"/>-->
+                  
+        <!--<property name="tolerance.alert"-->
+                  <!--defaultValue="ON"-->
+                  <!--description="容灾机制短信报警控制"/>-->
+                  <!-- -->
+        <!--<property name="job.host"-->
+                  <!--defaultValue="10.162.101.46"-->
+                  <!--description="允许跑定时任务的机器ip stable:10.162.101.46;线上:10.168.86.137"/>-->
+    </group>
+
+    <script>
+        <generate template="laker-manager.properties.vm" destfile="laker-manager.properties" charset="UTF-8"/>
+    </script>
+</config>
