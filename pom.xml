@@ -78,23 +78,23 @@
                 </executions>
             </plugin>
             <!-- aspectj plugin-->
-            <plugin>
-                <groupId>com.jcabi</groupId>
-                <artifactId>jcabi-maven-plugin</artifactId>
-                <version>0.14.1</version>
-                <executions>
-                    <execution>
-                        <!--<configuration>-->
-                        <!--<aspectDirectories>-->
-                        <!--<directory>src/main/aspect</directory>-->
-                        <!--</aspectDirectories>                -->
-                        <!--</configuration>	                -->
-                        <goals>
-                            <goal>ajc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>com.jcabi</groupId>-->
+                <!--<artifactId>jcabi-maven-plugin</artifactId>-->
+                <!--<version>0.14.1</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<aspectDirectories>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<directory>src/main/aspect</directory>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</aspectDirectories>                &ndash;&gt;-->
+                        <!--&lt;!&ndash;</configuration>	                &ndash;&gt;-->
+                        <!--<goals>-->
+                            <!--<goal>ajc</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <!--  -->
             <!--
             <plugin>

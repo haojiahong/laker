@@ -31,7 +31,7 @@
                     <path>/laker</path>
                     <server>localhost</server>
                     <uriEncoding>UTF-8</uriEncoding>
-                    <port>8095</port>
+                    <port>8080</port>
                 </configuration>
             </plugin>
 
