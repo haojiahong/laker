@@ -33,8 +33,9 @@ public class HomeController {
 
 
     @RequestMapping("/home")
-    public void getHome(Model model) {
+    public String getHome(Model model) {
         this.index(model);
+        return "index";
     }
 
     @RequestMapping("/about")
