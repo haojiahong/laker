@@ -1,16 +1,14 @@
-package com.hao.laker.entity;
+package com.hao.laker.web.vo;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-
 /**
- * Created by haojiahong on 2017/2/18.
+ * Created by haojiahong on 17/2/18.
  */
 @Getter
 @Setter
-public class ArticleDO {
+public class ArticleVO {
     private Integer id;
     private Integer categoryId;
     private String title;
@@ -18,8 +16,8 @@ public class ArticleDO {
     private String description;
     private Integer status;
     private String author;
-    private Date createTime;
-    private Date updateTime;
     private Integer showCount;
 
+    private String createTimeStr;
+    private String updateTimeStr;
 }

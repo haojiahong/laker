@@ -1,10 +1,9 @@
 package com.hao.laker.study.thread.task;
 
 import com.hao.laker.biz.test.TestService;
-import com.hao.laker.common.SpringIocUtil;
+import com.hao.laker.common.util.SpringIocUtil;
 import com.hao.laker.dao.test.TestMapper;
 import com.hao.laker.entity.test.Test1;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by haojiahong on 17/2/10.

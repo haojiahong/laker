@@ -1,4 +1,4 @@
-package com.hao.laker.common;
+package com.hao.laker.common.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

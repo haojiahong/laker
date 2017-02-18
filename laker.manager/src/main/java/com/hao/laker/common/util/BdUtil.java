@@ -1,4 +1,4 @@
-package com.hao.laker.common;
+package com.hao.laker.common.util;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
