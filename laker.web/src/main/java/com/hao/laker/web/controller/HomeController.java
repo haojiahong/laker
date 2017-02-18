@@ -33,9 +33,8 @@ public class HomeController {
 
 
     @RequestMapping("/home")
-    public String getHome(Model model) {
-        model.addAttribute("name", "haojiahong");
-        return "index";
+    public void getHome(Model model) {
+        this.index(model);
     }
 
     @RequestMapping("/about")

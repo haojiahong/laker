@@ -6,7 +6,7 @@
                   defaultValue="com.mysql.jdbc.Driver"
                   description="数据库驱动"/>
         <property name="jdbc.url"
-                  defaultValue="jdbc:mysql://10.105.18.45:3306?characterEncoding=UTF-8"
+                  defaultValue="jdbc:mysql://127.0.0.1:3306/laker?characterEncoding=UTF-8"
                   description="数据库连接url"/>
         <property name="jdbc.username"
                   defaultValue="root"
