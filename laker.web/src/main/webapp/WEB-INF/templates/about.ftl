@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title>Clean Blog - About</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,8 +19,8 @@
 
     <!-- Custom Fonts -->
     <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <#--<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
-    <#--<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>-->
+    <!--<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
+    <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,7 +49,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="/home">Home</a>
                     </li>
                     <li>
                         <a href="/about">About</a>
@@ -66,14 +66,14 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('/static/img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('/static/img/about-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                    <div class="page-heading">
+                        <h1>About Me</h1>
                         <hr class="small">
-                        <span class="subheading">A Clean Blog</span>
+                        <span class="subheading">This is what I do.</span>
                     </div>
                 </div>
             </div>
@@ -84,73 +84,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <#list dataList as data>
-                <div class="post-preview">
-                    <a href="/article/${data.id}">
-                        <h2 class="post-title">
-                            ${data.title}
-                        </h2>
-                        <h3 class="post-subtitle">
-                            ${data.description}
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">${data.author}</a> on ${data.createTimeStr}</p>
-                </div>
-                <hr>
-            </#list>
-
-
-                <#--<div class="post-preview">-->
-                    <#--<a href="post.ftl">-->
-                        <#--<h2 class="post-title">-->
-                            <#--Man must explore, and this is exploration at its greatest-->
-                        <#--</h2>-->
-                        <#--<h3 class="post-subtitle">-->
-                            <#--Problems look mighty small from 150 miles up-->
-                        <#--</h3>-->
-                    <#--</a>-->
-                    <#--<p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>-->
-                <#--</div>-->
-                <#--<hr>-->
-                <#--<div class="post-preview">-->
-                    <#--<a href="post.ftl">-->
-                        <#--<h2 class="post-title">-->
-                            <#--I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.-->
-                        <#--</h2>-->
-                    <#--</a>-->
-                    <#--<p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>-->
-                <#--</div>-->
-                <#--<hr>-->
-                <#--<div class="post-preview">-->
-                    <#--<a href="post.ftl">-->
-                        <#--<h2 class="post-title">-->
-                            <#--Science has not yet mastered prophecy-->
-                        <#--</h2>-->
-                        <#--<h3 class="post-subtitle">-->
-                            <#--We predict too much for the next year and yet far too little for the next ten.-->
-                        <#--</h3>-->
-                    <#--</a>-->
-                    <#--<p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>-->
-                <#--</div>-->
-                <#--<hr>-->
-                <#--<div class="post-preview">-->
-                    <#--<a href="post.ftl">-->
-                        <#--<h2 class="post-title">-->
-                            <#--Failure is not an option-->
-                        <#--</h2>-->
-                        <#--<h3 class="post-subtitle">-->
-                            <#--Many say exploration is part of our destiny, but it’s actually our duty to future generations.-->
-                        <#--</h3>-->
-                    <#--</a>-->
-                    <#--<p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>-->
-                <#--</div>-->
-                <#--<hr>-->
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
+                <p>这是我的个人小站，后续功能正在开发中哟。。。</p>
+                <p>没错，这么fashion的前台页面确实不是我做的。<a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog">源码在这里</a></p>
+                <p></p>
             </div>
         </div>
     </div>
