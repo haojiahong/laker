@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.laker.dao.ToleranceMapper">
+        <resultMap id="BaseResultMap" type="com.hao.laker.entity.ToleranceDO">
+                <id column="id" property="id" jdbcType="INTEGER"/>
+                <result column="is_deleted" property="isDeleted" jdbcType="VARCHAR"/>
+                <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP"/>
+                <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP"/>
+                <result column="creator" property="creator" jdbcType="INTEGER"/>
+                <result column="modifier" property="modifier" jdbcType="INTEGER"/>
+                <result column="tolerance_class" property="toleranceClass" jdbcType="VARCHAR"/>
+                <result column="tolerance_method" property="toleranceMethod" jdbcType="VARCHAR"/>
+                <result column="tolerance_request" property="toleranceRequest" jdbcType="VARCHAR"/>
+                <result column="tolerance_status" property="toleranceStatus" jdbcType="INTEGER"/>
+                <result column="retry_times" property="retryTimes" jdbcType="INTEGER"/>
+        </resultMap>
+
+        <sql id="Base_Column_List">
+                id, is_deleted, gmt_create, gmt_modified, creator, modifier, tolerance_class, tolerance_method,
+                tolerance_request, tolerance_status, retry_times
+        </sql>
+
+        <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id">
+                INSERT INTO t_tolerance
+                <trim prefix="(" suffix=")" suffixOverrides="," >
+                        <if test="isDeleted != null">
+                                is_deleted,
+                        </if>
+                        <if test="gmtCreate != null">
+                                gmt_create,
+                        </if>
+                        <if test="gmtModified != null">
+                                gmt_modified,
+                        </if>
+                        <if test="creator != null">
+                                creator,
+                        </if>
+                        <if test="modifier != null">
+                                modifier,
+                        </if>
+                        <if test="toleranceClass != null">
+                                tolerance_class,
+                        </if>
+                        <if test="toleranceMethod != null">
+                                tolerance_method,
+                        </if>
+                        <if test="toleranceRequest != null">
+                                tolerance_request,
+                        </if>
+                        <if test="toleranceStatus != null">
+                                tolerance_status,
+                        </if>
+                        <if test="retryTimes != null">
+                                retry_times,
+                        </if>
+                </trim>
+                <trim prefix="values (" suffix=")" suffixOverrides="," >
+                        <if test="isDeleted!=null">
+                                #{isDeleted,jdbcType=VARCHAR},
+                        </if>
+                        <if test="gmtCreate!=null">
+                                #{gmtCreate,jdbcType=TIMESTAMP},
+                        </if>
+                        <if test="gmtModified!=null">
+                                #{gmtModified,jdbcType=TIMESTAMP},
+                        </if>
+                        <if test="creator!=null">
+                                #{creator,jdbcType=INTEGER},
+                        </if>
+                        <if test="modifier!=null">
+                                #{modifier,jdbcType=INTEGER},
+                        </if>
+                        <if test="toleranceClass!=null">
+                                #{toleranceClass,jdbcType=VARCHAR},
+                        </if>
+                        <if test="toleranceMethod!=null">
+                                #{toleranceMethod,jdbcType=VARCHAR},
+                        </if>
+                        <if test="toleranceRequest!=null">
+                                #{toleranceRequest,jdbcType=VARCHAR},
+                        </if>
+                        <if test="toleranceStatus!=null">
+                                #{toleranceStatus,jdbcType=INTEGER},
+                        </if>
+                        <if test="retryTimes!=null">
+                                #{retryTimes,jdbcType=INTEGER},
+                        </if>
+                </trim>
+        </insert>
+
+        <update id="updateByPrimaryKey">
+                UPDATE t_tolerance
+                <set>
+                        <if test="isDeleted != null">
+                                is_deleted = #{isDeleted,jdbcType=VARCHAR},
+                        </if>
+                        <if test="gmtModified != null">
+                                gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+                        </if>
+                        <if test="modifier != null">
+                                modifier = #{modifier,jdbcType=INTEGER},
+                        </if>
+                        <!--<if test="toleranceClass != null">-->
+                        <!--tolerance_class = #{toleranceClass,jdbcType=VARCHAR},-->
+                        <!--</if>-->
+                        <!--<if test="toleranceMethod != null">-->
+                        <!--tolerance_method = #{toleranceMethod,jdbcType=VARCHAR},-->
+                        <!--</if>-->
+                        <!--<if test="toleranceRequest != null">-->
+                        <!--tolerance_request = #{toleranceRequest,jdbcType=VARCHAR},-->
+                        <!--</if>-->
+                        <if test="toleranceStatus != null">
+                                tolerance_status = #{toleranceStatus,jdbcType=INTEGER},
+                        </if>
+                        <if test="retryTimes != null">
+                                retry_times = #{retryTimes,jdbcType=INTEGER},
+                        </if>
+                </set>
+                WHERE id = #{id,jdbcType=INTEGER}
+        </update>
+
+        <select id="selectByStatus" resultMap="BaseResultMap">
+                SELECT
+                <include refid="Base_Column_List" />
+                FROM t_tolerance
+                WHERE tolerance_status = #{status} and is_deleted = 'N'
+        </select>
+    
+</mapper>

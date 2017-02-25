@@ -7,8 +7,8 @@
        http://www.springframework.org/schema/task
        http://www.springframework.org/schema/task/spring-task-4.2.xsd">
 
-    <!--<task:scheduled-tasks>-->
+    <task:scheduled-tasks>
         <!--改价容灾定时任务 每5分钟执行一次-->
-        <!--<task:scheduled ref="toleranceJob" method="execute" cron="0 0/5 * * * ?"/>-->
-    <!--</task:scheduled-tasks>-->
+        <task:scheduled ref="toleranceJob" method="execute" cron="0 0/1 * * * ?"/>
+    </task:scheduled-tasks>
 </beans>

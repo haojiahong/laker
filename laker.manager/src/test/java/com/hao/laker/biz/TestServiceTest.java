@@ -1,9 +1,11 @@
 package com.hao.laker.biz;
 
 import com.hao.laker.entity.test.Test1;
+import com.hao.laker.manager.other.TestToleranceManager;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -12,6 +14,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 //@Transactional
 @Slf4j
 public class TestServiceTest {
+
+    @Autowired
+    private TestToleranceManager testToleranceManager;
+
     //    @Autowired
 //    private TestService testService;
 //    @Autowired
@@ -47,6 +53,19 @@ public class TestServiceTest {
 //    public void threadTest() {
 //        mainProcessor.testSpringTransactionThread();
 //    }
+
+    @Test
+    public void testTolerance() throws Exception {
+        Integer userId = 2565;
+        String json = "i am haojiahong";
+        testToleranceManager.canToleranceException(null, userId, json);
+
+        Thread.sleep(1000 * 60 * 2);
+
+        System.out.println("测试完成");
+
+
+    }
 
 }
 
