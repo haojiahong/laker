@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="userIocBean" class="com.hao.laker.study.spring.ioc.UserIocBean">
+        <property name="userName">
+            <value>这是姓名</value>
+        </property>
+        <property name="password">
+            <value>这是密码</value>
+        </property>
+        <property name="age">
+            <value>25</value>
+        </property>
+    </bean>
+</beans>
