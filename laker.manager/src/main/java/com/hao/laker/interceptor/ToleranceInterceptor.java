@@ -19,7 +19,6 @@ import java.util.List;
  * Created by YangFalcom on 16/8/3.
  */
 @Slf4j
-@Service
 public class ToleranceInterceptor implements MethodInterceptor {
 
     @Autowired

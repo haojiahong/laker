@@ -15,4 +15,14 @@
                       expression="execution(* com.hao.laker.manager..*.*(..)) and @annotation(com.hao.laker.interceptor.Tolerance)"/>
         <aop:advisor advice-ref="toleranceInterceptor" pointcut-ref="toleranceRecorder"/>
     </aop:config>
+
+    <bean id="jiaCacheInterceptor" class="com.hao.laker.study.cache.JiaCacheInterceptor"/>
+
+    <aop:config proxy-target-class="false">
+        <aop:pointcut id="cacheRecorder" expression="execution(* com.hao.laker.study..*.*(..)) and @annotation(com.hao.laker.study.cache.JiaCache)"/>
+        <aop:advisor advice-ref="jiaCacheInterceptor" pointcut-ref="cacheRecorder"/>
+    </aop:config>
+
+
+
 </beans>

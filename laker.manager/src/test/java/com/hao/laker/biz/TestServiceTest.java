@@ -2,6 +2,7 @@ package com.hao.laker.biz;
 
 import com.hao.laker.entity.test.Test1;
 import com.hao.laker.manager.other.TestToleranceManager;
+import com.hao.laker.study.cache.JiaCacheManager;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,6 +18,8 @@ public class TestServiceTest {
 
     @Autowired
     private TestToleranceManager testToleranceManager;
+    @Autowired
+    private JiaCacheManager jiaCacheManager;
 
     //    @Autowired
 //    private TestService testService;
@@ -65,6 +68,12 @@ public class TestServiceTest {
         System.out.println("测试完成");
 
 
+    }
+
+    @Test
+    public void TestJiaCache() {
+        jiaCacheManager.getDataFromCache(111, 123);
+        System.out.println("测试完成");
     }
 
 }
