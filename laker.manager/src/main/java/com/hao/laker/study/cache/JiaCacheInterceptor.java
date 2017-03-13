@@ -32,7 +32,8 @@ public class JiaCacheInterceptor implements MethodInterceptor {
 
         Object objResult = null;
 
-        String result = "我是从缓存中获取到的值,根据key=" + key;
+//        String result = "我是从缓存中获取到的值,根据key=" + key;
+        String result = null;
         if (StringUtils.isBlank(result)) {
             objResult = invocation.proceed();
             String dataBaseResult = "我是从数据库中获取到的值。";
