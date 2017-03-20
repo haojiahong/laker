@@ -24,7 +24,8 @@ public class TryLockTask implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            if (lock.isHeldByCurrentThread()) {//trylock很可能未获取到锁，所以如果没有获取到锁但是unlock了会报illegalMonitorException
+            //trylock很可能未获取到锁，所以如果没有获取到锁但是unlock了会报illegalMonitorException
+            if (lock.isHeldByCurrentThread()) {
                 lock.unlock();
             }
         }
