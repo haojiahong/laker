@@ -15,40 +15,42 @@ public class NServer {
     private Selector selector = null;
     static final int PORT = 30000;
     private Charset charset = Charset.forName("UTF-8");
-    public void init() throws IOException {
+
+    public void init() throws IOException, InterruptedException {
         selector = Selector.open();
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-        InetSocketAddress inetSocketAddress = new InetSocketAddress("127.0.0.1",PORT);
+        InetSocketAddress inetSocketAddress = new InetSocketAddress("127.0.0.1", PORT);
         serverSocketChannel.bind(inetSocketAddress);
         serverSocketChannel.configureBlocking(false);
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
-        while(selector.select()>0){
-            for (SelectionKey sk : selector.selectedKeys()){
+        while (selector.select() > 0) {
+            for (SelectionKey sk : selector.selectedKeys()) {
                 selector.selectedKeys().remove(sk);
-                if (sk.isAcceptable()){
+                if (sk.isAcceptable()) {
                     SocketChannel socketChannel = serverSocketChannel.accept();
                     socketChannel.configureBlocking(false);
-                    socketChannel.register(selector,SelectionKey.OP_READ);
+                    socketChannel.register(selector, SelectionKey.OP_READ);
                     sk.interestOps(SelectionKey.OP_ACCEPT);
                 }
 
-                if (sk.isReadable()){
+                if (sk.isReadable()) {
                     SocketChannel socketChannel = (SocketChannel) sk.channel();
                     ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
                     StringBuilder content = new StringBuilder();
 
-                    while(socketChannel.read(byteBuffer)>0){
+                    while (socketChannel.read(byteBuffer) > 0) {
                         byteBuffer.flip();
                         content.append(charset.decode(byteBuffer));
                     }
-                    System.out.println("读取的数据:"+content.toString());
+                    System.out.println("读取的数据:" + content.toString());
                     sk.interestOps(SelectionKey.OP_READ);
-                    if (StringUtils.isBlank(content.toString())){
-                        for (SelectionKey key : selector.selectedKeys()){
+                    if (!StringUtils.isBlank(content.toString())) {
+                        for (SelectionKey key : selector.keys()) {
                             Channel channel = key.channel();
-                            if (channel instanceof SocketChannel){
+                            if (channel instanceof SocketChannel) {
                                 SocketChannel dest = (SocketChannel) channel;
+                                Thread.sleep(10 * 1000);
                                 dest.write(charset.encode(content.toString()));
                             }
                         }
@@ -59,7 +61,7 @@ public class NServer {
 
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         new NServer().init();
     }
 }

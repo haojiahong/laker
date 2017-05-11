@@ -13,7 +13,7 @@ import java.util.List;
 public class MyObjectComparator implements Comparator<MyObject> {
     @Override
     public int compare(MyObject o1, MyObject o2) {
-        if (o1.getStr().compareTo(o2.getStr()) > 1) {
+        if (o1.getStr().compareTo(o2.getStr()) == 1) {
             return 1;
         } else if (o1.getStr().compareTo(o2.getStr()) == 0) {
             return 0;
