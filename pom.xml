@@ -188,6 +188,11 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+            <dependency>
                 <groupId>org.objenesis</groupId>
                 <artifactId>objenesis</artifactId>
                 <version>2.2</version>
