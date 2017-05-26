@@ -23,7 +23,7 @@ public class Wait_Notify_Test {
     }
 
     public static class OddTask implements Runnable {
-        private Object lockObj;
+        private final Object lockObj;
 
         public OddTask(Object lockObj) {
             this.lockObj = lockObj;
@@ -50,7 +50,7 @@ public class Wait_Notify_Test {
     }
 
     public static class EvenTask implements Runnable {
-        private Object lockObj;
+        private final Object lockObj;
 
         public EvenTask(Object lockObj) {
             this.lockObj = lockObj;

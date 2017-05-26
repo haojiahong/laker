@@ -8,6 +8,7 @@ import java.util.concurrent.*;
 public class ThreadLocalTest {
     private static ExecutorService executor = Executors.newFixedThreadPool(1);
     public static ThreadLocal<String> threadLocal = new ThreadLocal<>();
+    public static ThreadLocal<String> threadLocal2 = new ThreadLocal<>();
 
     //线程池中线程通过一个任务对ThreadLocal变量赋值。
     private static class SetTask implements Callable<String> {
@@ -21,6 +22,9 @@ public class ThreadLocalTest {
         @Override
         public String call() throws Exception {
             threadLocal.set(Thread.currentThread().getName() + "的值为:" + i);
+            threadLocal.set(Thread.currentThread().getName() + "的值为2:" + i);
+            threadLocal2.set(Thread.currentThread().getName() + "的值为3" + i);
+            System.out.println(Thread.currentThread());
             return threadLocal.get();
         }
     }
