@@ -27,7 +27,7 @@
     <appender name="ERROR" class="ch.qos.logback.core.FileAppender">
         <file>logs/error.log</file>
         <append>false</append>
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">å
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>ERROR</level>
         </filter>
         <encoder>
