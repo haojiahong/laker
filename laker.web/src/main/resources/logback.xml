@@ -18,7 +18,7 @@
             <fileNamePattern>common.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
-        <encoder>`
+        <encoder>
             <charset>UTF-8</charset>
             <pattern>${COMMON_PATTERN}</pattern>
         </encoder>
